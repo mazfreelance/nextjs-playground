@@ -114,3 +114,9 @@
     flex-direction: column;
   }
 }
+
+.login_box {
+  width: 340px;
+  background-color: #fff;
+  border-radius: 3%;
+}

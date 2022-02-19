@@ -3,21 +3,21 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import LoginForm from '../../components/login-form'
 
-const Home: NextPage = () => {
+const Login: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>Our Home</title>
+        <title>Login Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="vh-100 d-flex justify-content-center align-items-center">
-        {/* <LoginForm /> */}
-        Home
+        <LoginForm />
       </main>
     </div>
   )
 }
 
-export default Home
+export default Login
