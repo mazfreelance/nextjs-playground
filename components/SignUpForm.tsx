@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { auth } from '../configs/firebase';
+import { useAuth } from '../hooks/useAuth';
+import { auth, db } from '../configs/firebase';
+import { useRouter } from 'next/router';
 
 interface SignUpData {
     name: string;
@@ -7,23 +10,15 @@ interface SignUpData {
     password: string;
 }
 
-const signUp = ({ name, email, password }) => {
-    return auth
-        .createUserWithEmailAndPassword(email, password)
-        .then((response: any) => {
-            console.log(response)
-        })
-        .catch((error: any) => {
-            return { error };
-        });
-};
-
 const SignUpForm: React.FC = () => {
-    const { register, handleSubmit, reset, setValue, getValues, setError, formState: { errors }, formState } = useForm();
+    const { register, handleSubmit, reset, setValue, getValues, setError, formState: { errors }, formState } = useForm<SignUpData>();
     const onSubmit = (data: SignUpData) => {
-        // console.log(data);
-        return signUp(data).then((user: any) => {
-            console.log(user);
+        console.log('data', data);
+        const auth = useAuth();
+        const router = useRouter();
+        return auth.signUp(data).then((user: any) => {
+            console.log('user sign up', user);
+            // router.push('/index');
         });
     };
     return (

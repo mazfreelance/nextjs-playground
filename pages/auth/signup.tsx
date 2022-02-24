@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import SignupForm from '../../components/signup-form'
+import SignupForm from '../../components/SignUpForm'
 
 const SignUpPage: React.FC = () => {
   return (

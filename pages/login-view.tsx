@@ -1,9 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import LoginForm from '../../components/LoginForm'
+import LoginForm from '../components/login-form-view'
 
 const Login: React.FC = () => {
   return (
